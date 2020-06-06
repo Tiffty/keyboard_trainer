@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Keyboard Trainer</title>
+    <link rel="icon" href="img\icon.png" type="image/png">
+
+    <script src="app\text.js" defer></script>	<!-- Contains array of objects (text and source of text) --> 
+    <script src="app\keys.js" defer></script>	<!-- Contains array of keys (objects) --> 
+    <script src="app\index.js" defer></script>	<!-- Main script --> 
+    
+    <link rel="stylesheet" type="text/css" href="style\style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+
+	<div id="settings" class="settings">
+		<h2 id="p_settings">Settings</h2>
+
+		<p style="font-weight:bold" id="p_language">• Language</p>
+		<form name="selectTheme" class="">
+			<p>	English  <input type="radio" name="lang" id="selectEngLang" checked /> </p>	
+			<p>	Русский  <input type="radio" name="lang" id="selectRusLang"/> </p>
+			<p>	Українська  <input type="radio" name="lang" id="selectUkrLang"/> </p>
+		</form>
+
+		<p style="font-weight:bold" id="p_langpacks">• Language of text</p>
+		<form name="selectTextPack" class="myCheckBox">
+			<p><span id="p_langPackEng">English text</span><input type="checkbox" name="selectEng" checked /> </p>
+			<p><span id="p_langPackRus">Russian text</span><input type="checkbox" name="selectRus" /> </p>
+			<p><span id="p_langPackUkr">Ukrainian text</span><input type="checkbox" name="selectUkr" /> </p>
+		</form>
+
+		<p style="font-weight:bold" id="p_mode">• Mode</p>
+		<form name="selectMode" class="">
+			<p>	<span style="color: #7fad68"> Oh,_He</span>llo World  <input type="radio" name="mode" id="selectMode0" checked /> </p>
+			<p>	llo World  <input type="radio" name="mode" id="selectMode1" /> </p>
+		</form>
+
+		<p style="font-weight:bold" id="p_font">• Font</p>
+		<form name="selectFont" class="">
+			<p>	Open Sans  <input type="radio" name="font" id="selectOpsans" checked /> </p>
+			<p>	Times New Roman  <input type="radio" name="font" id="selectTimes"/> </p>
+			<p>	Arial  <input type="radio" name="font" id="selectArial"/> </p>
+		</form>
+		
+		<p style="font-weight:bold" id="p_theme">• Theme</p>
+		<form name="selectTheme" class="">
+			<p>
+				<span id="p_themeGrL">Green Light</span><input type="radio" name="theme" id="selectGreen" checked />
+				<span id="p_themeGrD">Dark</span><input type="radio" name="theme" id="selectGreenD"/>
+			</p>	
+			<p>
+				<span id="p_themePuL">Purple Light</span><input type="radio" name="theme" id="selectPurple"/>
+				<span id="p_themePuD">Dark</span><input type="radio" name="theme" id="selectPurpleD"/>
+			</p>
+			<p>
+				<span id="p_themeGoL">Golden Light</span><input type="radio" name="theme" id="selectGolden"/>
+				<span id="p_themeGoD">Dark</span><input type="radio" name="theme" id="selectGoldenD"/>
+			</p>
+		</form>
+
+		<br>
+		<button id="close-btn" class="btnCls">Apply settings</button>
+	</div>
+
+
+	<div class="container">
+		<ul class="elements">
+
+			<li id="header"><h1 id="p_header">Keyboard Trainer</h1></li>
+
+			<li>
+				<input type="Button" id="settingsBtn" value="Settings" class="btn settingsBtn"></button>
+				<input type="Button" id="startBtn" value="Start" class="btn unselectable" style="margin-left: 30px;">
+				<input type="Button" id="pauseBtn" value="Pause" class="btn unselectable">
+				<input type="Button" id="resetBtn" value="Reset" class="btn unselectable">
+				<input type="Button" id="reloadBtn" value="Next text" class="btn unselectable">
+			</li>
+				<br>
+			<li><p id="outSource">⠀</p></li>
+			<li><p id="outText" style=" font-size: 20px; height: 90px;" class="text">⠀</p></li>
+			<li>
+				<br>
+				<div class="rate">
+					<p id="p_time">Time</p>
+					<p id="outTime">00:00</p>
+				</div>
+				<div class="rate" id="mistakes">
+					<p id="p_mistakes">Mistakes</p>
+					<p id="outMistakes">0</p>
+				</div>
+				<div class="rate" style="margin-left: 40px">
+					<p id="p_c/s">char/sec</p>
+					<p id="outSpeedPerSec">0</p>
+				</div>
+				<div class="rate">
+					<p id="p_maxc/s">Max (c/s)</p>
+					<p id="outSpeedPerSecMax">0</p>
+				</div>
+				<div class="rate">
+					<p id="p_c/m">char/min</p>
+					<p id="outSpeedPerMin">0</p>
+				</div>
+				<div class="rate">
+					<p id="p_maxc/m">Max (c/m)</p>
+					<p id="outSpeedPerMinMax">0</p>
+				</div>
+				
+			</li>
+		</ul>
+
+		<br>
+
+		<canvas id="canvas" width="813" height="316"></canvas>
+
+    </div>
+</body>
+</html>
